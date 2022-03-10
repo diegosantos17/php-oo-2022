@@ -2,7 +2,7 @@
 
 require 'cliente.php';
 
-$clienteOuro = new Cliente("anne caroline", "pereira", "22244455577", 100);
+$clienteOuro = new Cliente("anne caroline", "pereira", 100);
 $clientePrata = new Cliente();
 
 
