@@ -1,5 +1,5 @@
 <?php
-enum Sexo {
-	case Masculino;
-	case Feminino;	
+enum Sexo: int {
+	case Masculino = 1;
+	case Feminino = 2;	
 }

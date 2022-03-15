@@ -7,6 +7,7 @@ class Rg extends Documento {
 	public function __construct()
 	{
 		parent::__construct(TipoDocumento::Rg);
+		$this->id = 0;
 	}
 
 	public function setNumero(String $numeroParam){
