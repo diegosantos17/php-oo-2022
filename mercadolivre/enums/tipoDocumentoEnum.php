@@ -1,7 +1,7 @@
 <?php
 
 enum TipoDocumentoEnum: int {
-	case Cpf = 1;
+	case Cpf = 8;
 	case Rg = 2;
 	case Cnh = 3;
 }
