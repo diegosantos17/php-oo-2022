@@ -14,21 +14,23 @@
 <body>
 
 	<?php
-		// Um bloco chique de PHP
-		$rootDir = dirname(__DIR__) . "/mercadolivre";		
-		require_once("$rootDir/models/cliente.php");
+	// Um bloco chique de PHP
+	$rootDir = dirname(__DIR__) . "/mercadolivre";
+	require_once("$rootDir/models/cliente.php");
 
-		$sexos = Cliente::getSexos();		
+	$sexos = Cliente::getSexos();
+	$tiposDocumento = Cliente::getTiposDocumento();	
 	?>
 
 	<div class="container">
 		<form action="processar.php" method="POST">
+			<!-- Nome completo -->
 			<div class="row">
 				<div class="col-8">
 					<div class="form-group">
 						<label for="nomeCompleto">Nome completo</label>
 						<input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto">
-						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+						<small id="nomeHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 					</div>
 				</div>
 				<div class="col-4">
@@ -36,16 +38,54 @@
 						<label for="sexo">Sexo</label>
 						<select id="sexo" class="form-control">
 							<option selected>Selecione</option>
-							<?php 
-								foreach ($sexos as $key => $sexo) {
-									echo "<option value='{$sexo["id"]}'>{$sexo["text"]}</option>";   
-								}
+							<?php
+							foreach ($sexos as $key => $sexo) {
+								echo "<option value='{$sexo["id"]}'>{$sexo["text"]}</option>";
+							}
 							?>
 						</select>
 					</div>
 				</div>
 			</div>
 
+			<!-- Documentos -->
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label for="tipoDocumento">Tipo</label>
+						<select id="tipoDocumento" class="form-control">
+							<option selected>Selecione</option>
+							<?php
+							foreach ($tiposDocumento as $key => $tipoDocumento) {
+								echo "<option value='{$tipoDocumento["id"]}'>{$tipoDocumento["text"]}</option>";
+							}
+							?>
+						</select>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label for="nomeCompleto">Número</label>
+						<input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto">
+						<small id="nomeHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label for="nomeCompleto">Validade</label>
+						<input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto">
+						<small id="nomeHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label for="nomeCompleto">Orgão expedidor</label>
+						<input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto">
+						<small id="nomeHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					</div>
+				</div>
+			</div>
+			<!-- Aceito os termos -->
 			<div class="row">
 				<div class="col-12">
 					<div class="form-group form-check">

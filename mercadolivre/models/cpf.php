@@ -4,7 +4,7 @@ class Cpf extends Documento {
 
 	public function __construct()
 	{
-		parent::__construct(TipoDocumento::Cpf);
+		parent::__construct(TipoDocumentoEnum::Cpf);
 	}
 
 	public function setNumero(String $numeroParam){

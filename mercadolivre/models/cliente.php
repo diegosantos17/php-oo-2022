@@ -4,10 +4,12 @@ $rootDir = dirname(__DIR__);
 require_once("$rootDir/models/documento.php");
 require_once("$rootDir/enums/sexoEnum.php");
 require_once("$rootDir/traits/sexoTrait.php");
+require_once("$rootDir/traits/tipoDocumentoTrait.php");
 
 class Cliente
 {
 	use SexoTrait;
+	use TipoDocumentoTrait;
 
 	private String $nomeCompleto;
 	private SexoEnum $sexo;

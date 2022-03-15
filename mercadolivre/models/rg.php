@@ -6,7 +6,7 @@ class Rg extends Documento {
 
 	public function __construct()
 	{
-		parent::__construct(TipoDocumento::Rg);
+		parent::__construct(TipoDocumentoEnum::Rg);
 		$this->id = 0;
 	}
 

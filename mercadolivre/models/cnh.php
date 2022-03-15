@@ -5,7 +5,7 @@ class Cnh extends Documento {
 
 	public function __construct()
 	{
-		parent::__construct(TipoDocumento::Rg);
+		parent::__construct(TipoDocumentoEnum::Rg);
 	}
 
 	public function setNumero(String $numeroParam){
