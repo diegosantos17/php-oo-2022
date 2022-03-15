@@ -12,6 +12,15 @@
 </head>
 
 <body>
+
+	<?php
+		// Um bloco chique de PHP
+		$rootDir = dirname(__DIR__) . "/mercadolivre";		
+		require_once("$rootDir/models/cliente.php");
+
+		$sexos = Cliente::getSexos();		
+	?>
+
 	<div class="container">
 		<form action="processar.php" method="POST">
 			<div class="row">
@@ -26,8 +35,12 @@
 					<div class="form-group">
 						<label for="sexo">Sexo</label>
 						<select id="sexo" class="form-control">
-							<option selected>Choose...</option>
-							<option>...</option>
+							<option selected>Selecione</option>
+							<?php 
+								foreach ($sexos as $key => $sexo) {
+									echo "<option value='{$sexo["id"]}'>{$sexo["text"]}</option>";   
+								}
+							?>
 						</select>
 					</div>
 				</div>
