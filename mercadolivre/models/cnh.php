@@ -14,7 +14,7 @@ class Cnh extends Documento {
 
 	public function setValidade(String $validadeParam){
 		
-		$isValida = $this->validarVencimentoCnh($validadeParam);
+		$isValida = $this->validarDocumento($validadeParam);
 
 		if($isValida){
 			$this->validade = $validadeParam;
@@ -24,7 +24,7 @@ class Cnh extends Documento {
 		}
 	}
 
-	private function validarVencimentoCnh($validadeParam):bool
+	protected function validarDocumento($validadeParam):bool
 	{
 		//TODO: Validar se a CNH está vencida
 		return true;

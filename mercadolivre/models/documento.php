@@ -15,4 +15,5 @@ abstract class Documento
 		$this->tipoDocumento  = $tipoDocumentoParam;
 	}
 
+	protected abstract function validarDocumento($numeroParam):bool;
 }

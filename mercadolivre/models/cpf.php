@@ -8,7 +8,7 @@ class Cpf extends Documento {
 	}
 
 	public function setNumero(String $numeroParam){
-		$isValid = $this->validarCpf($numeroParam);
+		$isValid = $this->validarDocumento($numeroParam);
 
 		if($isValid){
 			$this->numero = $numeroParam;
@@ -17,7 +17,7 @@ class Cpf extends Documento {
 		}
 	}
 
-	private function validarCpf($numeroParam)
+	protected function validarDocumento($numeroParam):bool
 	{
 		// Extrai somente os números
 		$cpf = preg_replace('/[^0-9]/is', '', $numeroParam);
