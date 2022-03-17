@@ -2,6 +2,7 @@
 
 $rootDir = dirname(__DIR__);
 require_once("$rootDir/models/cliente.php");
+require_once("$rootDir/enums/tipoDocumentoEnum.php");
 
 class ClienteRepository {
 
@@ -35,9 +36,24 @@ class ClienteRepository {
 	
 			$clienteNovo["nomeCompleto"] = $clienteParam->getNomeCompleto();
 			$clienteNovo["sexo"] = $clienteParam->getSexo();				
-	
+			$documentos = $clienteParam->getDocumentos();
+			
+			$documentosNovo["numero"] = $documentos[0]->getNumero();
+			$documentosNovo["tipoDocumento"] = $documentos[0]->getTipoDocumento()->name;
+
+			if($documentos[0]->getTipoDocumento() == TipoDocumentoEnum::Rg){
+				$documentosNovo["validade"] = $documentos[0]->getValidade();
+				$documentosNovo["orgaoExpedidor"] = $documentos[0]->getOrgaoExpedidor(); 
+			}
+
+			if($documentos[0]->getTipoDocumento() == TipoDocumentoEnum::Cnh){
+				$documentosNovo["validade"] = $documentos[0]->getValidade();				
+			}
+
+			$clienteNovo["documento"] = $documentosNovo;
+
 			$clienteJson = json_encode($clienteNovo);
-				
+			
 			fwrite($dataBase, "$clienteJson\n");
 			fclose($dataBase);
 		} catch (\Exception $ex) {

@@ -15,28 +15,48 @@
 
 	<?php
 	$rootDir = dirname(__DIR__) . "/mercadolivre";
-	require_once("$rootDir/models/cliente.php");	
+	require_once("$rootDir/models/cliente.php");
 	?>
-	<table class="table">
-		<thead>
-			<tr>				
-				<th scope="col">Nome</th>
-				<th scope="col">Sexo</th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php
-			$clientes = Cliente::obterClientes();
 
-			foreach ($clientes as $key => $cliente) {
-				echo "<tr>";
-				echo "	<td>$cliente->nomeCompleto</td>";
-				echo "	<td>$cliente->sexo</td>";
-				"</tr>";
-			}
-			?>
-		</tbody>
-	</table>
+	<div class="container">
+		<div class="row justify-content-end " style="padding: 20px">
+			<div class="col-2">
+				<a href="cadastro.php" class="btn btn-success">Novo cliente</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Nome</th>
+							<th scope="col">Sexo</th>
+							<th scope="col">Tipo Doc</th>
+							<th scope="col">Documento</th>
+							<th scope="col">Validade</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						$clientes = Cliente::obterClientes();
+						foreach ($clientes as $key => $cliente) {
+							$validade = $cliente->documento->validade ?? "-";
+
+							echo "<tr>";
+							echo "	<td>{$cliente->nomeCompleto}</td>";
+							echo "	<td>{$cliente->sexo}</td>";
+							echo "	<td>{$cliente->documento->tipoDocumento}</td>";
+							echo "	<td>{$cliente->documento->numero}</td>";
+							echo "	<td>{$validade}</td>";
+							"</tr>";
+						}
+						?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

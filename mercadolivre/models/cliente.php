@@ -35,7 +35,7 @@ class Cliente
 	}
 
 	public function getDocumentos(){
-		$this->documentos;
+		return $this->documentos;
 	}
 
 	public function salvar(){		

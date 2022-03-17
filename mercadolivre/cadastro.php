@@ -124,7 +124,7 @@
 			echo "<div class='alert alert-danger' role='alert'>$mensagemFeedback</div>";
 		} else {
 			$cliente->salvar();
-			echo "<div class='alert alert-success' role='alert'>Cliente salvo com sucesso!</div>";
+			echo "<div class='alert alert-success' role='alert'>Cliente salvo com sucesso! <a href='index.php'>ver todos clientes</a></div>";
 
 		}
 	}

@@ -15,5 +15,15 @@ abstract class Documento
 		$this->tipoDocumento  = $tipoDocumentoParam;
 	}
 
+	public function getNumero(){
+		return $this->numero;
+	}
+
+	public function getTipoDocumento():TipoDocumentoEnum{
+		return $this->tipoDocumento;
+	}
+
+	
+
 	protected abstract function validarDocumento($numeroParam):bool;
 }

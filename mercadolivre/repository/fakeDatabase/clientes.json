@@ -1,7 +1,2 @@
-{"nomeCompleto":"Anne","sexo":1}
-{"nomeCompleto":"Anne 2","sexo":1}
-{"nomeCompleto":"Diego Santos Rodrigues","sexo":1}
-{"nomeCompleto":"Tiago","sexo":1}
-{"nomeCompleto":"Roberto","sexo":1}
-{"nomeCompleto":"Anna","sexo":2}
-{"nomeCompleto":"Sonia","sexo":"Feminino"}
+{"nomeCompleto":"Anna Raio","sexo":"Feminino","documento":{"numero":"12341241","tipoDocumento":"Rg","validade":"10\/10\/2022","orgaoExpedidor":"SSP"}}
+{"nomeCompleto":"Diego Santos Rodrigues","sexo":"Masculino","documento":{"numero":"16215574058","tipoDocumento":"Cpf"}}
